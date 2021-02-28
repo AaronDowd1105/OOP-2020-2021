@@ -27,12 +27,15 @@ public class Project extends Canvas implements Runnable {
     private Thread thread;
     private JFrame frame;
     private Keyboard key;
+    private Screen screen;
     private boolean running = false;
 
 
     
 
     private BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+    private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+
     
 
     public Project(){
@@ -40,6 +43,7 @@ public class Project extends Canvas implements Runnable {
         setPreferredSize(size);
         frame = new JFrame();
         key = new Keyboard();
+        screen = new Screen(width, height);
         addKeyListener(key);
     }
 
@@ -113,6 +117,16 @@ public class Project extends Canvas implements Runnable {
             return; //exit method
         }
 
+        Graphics graphics = bs.getDrawGraphics();
+        graphics.setColor(Color.BLACK);
+        graphics.fillRect(0, 0, getWidth(), getHeight());
+        screen.render();
+        for(int i = 0; i < pixels.length; i++){
+            pixels[i] = screen.pixels[i];
+        }
+        graphics.drawImage(image, 0, 0, getWidth(), getHeight(), null);
+        graphics.dispose();
+        bs.show();
     }
 
     public static void main(String[] args){
