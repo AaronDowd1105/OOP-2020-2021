@@ -117,6 +117,7 @@ public class Project extends Canvas implements Runnable {
             return; //exit method
         }
 
+        screen.clear();
         Graphics graphics = bs.getDrawGraphics();
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0, 0, getWidth(), getHeight());
