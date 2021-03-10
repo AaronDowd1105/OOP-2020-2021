@@ -29,6 +29,7 @@ public class Project extends Canvas implements Runnable {
     private Keyboard key;
     private Screen screen;
     private boolean running = false;
+    private Level level;
 
 
     
@@ -45,6 +46,7 @@ public class Project extends Canvas implements Runnable {
         key = new Keyboard();
         screen = new Screen(width, height);
         addKeyListener(key);
+        level = new SpawnLevel("level.png");
     }
 
     public synchronized void start(){
@@ -121,7 +123,7 @@ public class Project extends Canvas implements Runnable {
         Graphics graphics = bs.getDrawGraphics();
         graphics.setColor(Color.BLACK);
         graphics.fillRect(0, 0, getWidth(), getHeight());
-        screen.render();
+        level.render(0, 0, screen);
         for(int i = 0; i < pixels.length; i++){
             pixels[i] = screen.pixels[i];
         }
