@@ -45,10 +45,61 @@ public class Main
         processing.core.PApplet.runSketch( a, new BugZap());
     }
 
+    public void bugZap()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new BugZap());
+    }
+
+    public void loops()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Loops());
+    }
+
+    public void arrays()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Arrays());
+    }
+    
+    public void life()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Life1());
+    }
+    
+    public void colorfulLife()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new ColorfulLife());
+    }
+
+    public void starMap()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new StarMap());
+    }
+    public void gantt()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Gantt());
+    }
+
+    public void audio1()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Audio1());
+    }
+
     public static void main(String[] args)
     {
         Main main = new Main();
+<<<<<<< HEAD
         main.BugZap();
+=======
+        main.audio1();
+>>>>>>> 3890c311f10fbd6418f1d95721507af7f312ff21
     }
 
    

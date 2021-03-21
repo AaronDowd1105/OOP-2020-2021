@@ -46,7 +46,7 @@ public class Project extends Canvas implements Runnable {
         key = new Keyboard();
         screen = new Screen(width, height);
         addKeyListener(key);
-        level = new SpawnLevel("level.png");
+        level = new SpawnLevel("/level.png");
     }
 
     public synchronized void start(){
