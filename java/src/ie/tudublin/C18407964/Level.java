@@ -34,9 +34,11 @@ public class Level {
 		for(int y = y0; y < y1; y++){
 			for (int x = x0; x < x1; x++){
 				getTile(x, y).render(x, y, screen);
+				System.out.println("Whats the color");
 			}
 		}
 	}
+
 
     public Tile getTile(int x, int y){
 		if (x < 0 || y < 0 || x >= width || y >= height ) return Tile.ground;

@@ -1,8 +1,6 @@
 package ie.tudublin.C18407964.Graphics;
 
-import com.jogamp.newt.Screen;
-
-import org.graalvm.compiler.nodes.gc.G1ArrayRangePreWriteBarrier;
+import ie.tudublin.C18407964.Screen;
 
 public class Tile {
     public int x, y;

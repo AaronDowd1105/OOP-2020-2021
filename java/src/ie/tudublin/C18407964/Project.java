@@ -121,12 +121,12 @@ public class Project extends Canvas implements Runnable {
 
         screen.clear();
         Graphics graphics = bs.getDrawGraphics();
-        graphics.setColor(Color.BLACK);
+        graphics.setColor(Color.RED);
         graphics.fillRect(0, 0, getWidth(), getHeight());
         level.render(0, 0, screen);
         for(int i = 0; i < pixels.length; i++){
-            pixels[i] = screen.pixels[i];
-        }
+           pixels[i] = screen.pixels[i];
+       }
         graphics.drawImage(image, 0, 0, getWidth(), getHeight(), null);
         graphics.dispose();
         bs.show();
