@@ -11,7 +11,7 @@ import java.awt.image.DataBufferInt;
 import javax.swing.JFrame;
 
 import ie.tudublin.C18407964.Keyboard;
-
+import ie.tudublin.C18407964.Player;
 
 public class Project extends Canvas implements Runnable {
 
@@ -30,6 +30,7 @@ public class Project extends Canvas implements Runnable {
     private Screen screen;
     private boolean running = false;
     private Level level;
+    private Player player;
 
 
     
@@ -47,6 +48,7 @@ public class Project extends Canvas implements Runnable {
         screen = new Screen(width, height);
         addKeyListener(key);
         level = new SpawnLevel("/level.png");
+        player = new Player(key);
     }
 
     public synchronized void start(){
@@ -101,14 +103,12 @@ public class Project extends Canvas implements Runnable {
 
     public void update(){
         key.update();
+        player.update();
         if(key.up){
-        System.out.println("Up");
        }
        if(key.down){
-        System.out.println("Down");
        }
        if(key.left){
-        System.out.println("Left");
        }
     }
     
@@ -120,10 +120,12 @@ public class Project extends Canvas implements Runnable {
         }
 
         screen.clear();
+        int xOffset = player.x - screen.width/2;
+        int yOffset = player.y - screen.height/2;
         Graphics graphics = bs.getDrawGraphics();
         graphics.setColor(Color.RED);
         graphics.fillRect(0, 0, getWidth(), getHeight());
-        level.render(0, 0, screen);
+        level.render(xOffset, yOffset, screen);
         for(int i = 0; i < pixels.length; i++){
            pixels[i] = screen.pixels[i];
        }

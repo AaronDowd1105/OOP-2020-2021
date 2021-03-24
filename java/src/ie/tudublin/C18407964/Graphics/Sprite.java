@@ -6,7 +6,7 @@ public class Sprite {
     public int[] pixels;
     private SpriteSheet sheet;
 
-    public static Sprite ground = new Sprite(16, 0, 0, SpriteSheet.tiles);
+    public static Sprite ground = new Sprite(32, 0, 0, SpriteSheet.tiles);
     public Sprite(int size, int x, int y, SpriteSheet sheet){
         SIZE = size;
         pixels = new int[SIZE * SIZE];
