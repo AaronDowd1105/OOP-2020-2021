@@ -2,7 +2,6 @@ package ie.tudublin.C18407964;
 
 
 import java.awt.Canvas;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
@@ -10,8 +9,7 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import javax.swing.JFrame;
 
-import ie.tudublin.C18407964.Keyboard;
-import ie.tudublin.C18407964.Player;
+
 
 public class Project extends Canvas implements Runnable {
 
@@ -31,6 +29,8 @@ public class Project extends Canvas implements Runnable {
     private boolean running = false;
     private Level level;
     private Player player;
+    private Zombie zombie;
+    private AudioManager audioManager;
 
 
     
@@ -49,6 +49,9 @@ public class Project extends Canvas implements Runnable {
         addKeyListener(key);
         level = new SpawnLevel("/level.png");
         player = new Player(key);
+        zombie = new Zombie(200, 200, player);
+        audioManager = new AudioManager(".//OOP-2020-2021//java//RES//Jaws.wav");
+        audioManager.playchaseMusic();
     }
 
     public synchronized void start(){
@@ -104,6 +107,10 @@ public class Project extends Canvas implements Runnable {
     public void update(){
         key.update();
         player.update();
+        zombie.update();
+        if(zombie.getDistanceFromPlayer() < 80){
+            audioManager.setVolume(zombie.getDistanceFromPlayer());
+        }
         if(key.up){
        }
        if(key.down){
@@ -123,9 +130,9 @@ public class Project extends Canvas implements Runnable {
         int xOffset = player.x - screen.width/2;
         int yOffset = player.y - screen.height/2;
         Graphics graphics = bs.getDrawGraphics();
-        graphics.setColor(Color.RED);
-        graphics.fillRect(0, 0, getWidth(), getHeight());
         level.render(xOffset, yOffset, screen);
+        player.render(screen);
+        zombie.render(screen);
         for(int i = 0; i < pixels.length; i++){
            pixels[i] = screen.pixels[i];
        }

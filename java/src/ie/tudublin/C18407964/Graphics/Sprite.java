@@ -7,6 +7,14 @@ public class Sprite {
     private SpriteSheet sheet;
 
     public static Sprite ground = new Sprite(32, 0, 0, SpriteSheet.tiles);
+    public static Sprite player = new Sprite(32, 0, 0, SpriteSheet.player);
+    public static Sprite playerBack = new Sprite(32, 1, 0, SpriteSheet.player);
+    public static Sprite playerRight = new Sprite(32, 2, 0, SpriteSheet.player);
+    public static Sprite playerLeft = new Sprite(32, 3, 0, SpriteSheet.player);
+    public static Sprite zombie = new Sprite(32, 0, 0, SpriteSheet.zombie);
+    public static Sprite zombieBack = new Sprite(32, 1, 0, SpriteSheet.zombie);
+    public static Sprite zombieRight = new Sprite(32, 2, 0, SpriteSheet.zombie);
+    public static Sprite zombieLeft = new Sprite(32, 3, 0, SpriteSheet.zombie);
     public Sprite(int size, int x, int y, SpriteSheet sheet){
         SIZE = size;
         pixels = new int[SIZE * SIZE];

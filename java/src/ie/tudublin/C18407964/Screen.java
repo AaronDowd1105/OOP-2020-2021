@@ -33,23 +33,32 @@ public class Screen {
     	xp -= xOffset;
     	yp -= yOffset;
     	
-    	for(int y = 0; y < 16; y++) {
+    	for(int y = 0; y < 32; y++) {
     		int ya = y + yp;
-    		for(int x = 0; x < 16; x++) {
+    		for(int x = 0; x < 32; x++) {
     			int xa = x + xp;
-    			if(xa < -16 || xa >= width || ya < 0 || ya >= height) break;
+    			if(xa < -32 || xa >= width || ya < 0 || ya >= height) break;
     			if (xa < 0) xa = 0;
-    			int col = sprite.pixels[x + y * 16];
-    			if(col != 0xfff000ca) pixels[xa + ya * width] = col;
+    			int col = sprite.pixels[x + y * 32];
+    			if(col != 0xff00ff00) pixels[xa + ya * width] = col;
     		}
     	}
     }
-    
-    public void renderLight(int xp, int yp) {
+
+	public void renderZombie(int xp, int yp, Sprite sprite) {
     	xp -= xOffset;
     	yp -= yOffset;
     	
-    	
+    	for(int y = 0; y < 32; y++) {
+    		int ya = y + yp;
+    		for(int x = 0; x < 32; x++) {
+    			int xa = x + xp;
+    			if(xa < -32 || xa >= width || ya < 0 || ya >= height) break;
+    			if (xa < 0) xa = 0;
+    			int col = sprite.pixels[x + y * 32];
+    			if(col != 0xff00ff00) pixels[xa + ya * width] = col;
+    		}
+    	}
     }
     
     public void renderTile(int xp, int yp, Tile tile) {
@@ -70,5 +79,6 @@ public class Screen {
     	this.xOffset = xOffset;
     	this.yOffset = yOffset;
     }
+
 
 }

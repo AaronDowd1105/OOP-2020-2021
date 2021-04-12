@@ -11,11 +11,14 @@ public class SpriteSheet {
     public int[] pixels;
 
     public static SpriteSheet tiles = new SpriteSheet("/spritesheet.png", 256);
+    public static SpriteSheet player = new SpriteSheet("/player.png", 256);
+    public static SpriteSheet zombie = new SpriteSheet("/zombie01.png", 256);
     public SpriteSheet(String path, int size){
         this.path = path;
         SIZE = size;
         pixels = new int[SIZE * SIZE];
         load();
+
     }
     public void load(){
         try {
@@ -28,5 +31,6 @@ public class SpriteSheet {
 		}
  
     }
+
     
 }

@@ -26,11 +26,10 @@ public class Level {
 
     public void render(int xScroll, int yScroll, Screen screen){
 		screen.setOffset(xScroll, yScroll);
-		int x0 = xScroll >> 4;
-		int x1 = (xScroll + screen.width + 16) >> 4; //+16 is to render 1 tile ahead
-		int y0 = yScroll >> 4;
-		int y1 = (yScroll + screen.height + 16) >> 4; //corner pins, space that is rendered
-		System.out.println("anything"+ xScroll+ yScroll);
+		int x0 = xScroll >> 5;
+		int x1 = (xScroll + screen.width + 32) >> 5; //+16 is to render 1 tile ahead
+		int y0 = yScroll >> 5;
+		int y1 = (yScroll + screen.height + 32) >> 5; //corner pins, space that is rendered
 		
 		for(int y = y0; y < y1; y++){
 			for (int x = x0; x < x1; x++){

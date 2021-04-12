@@ -1,12 +1,16 @@
 package ie.tudublin.C18407964;
 
+import ie.tudublin.C18407964.Graphics.Sprite;
+
 public class Player {
     private Keyboard input;
     public int x, y;
+    public Sprite sprite;
+    public int dir = 2;
 
     public Player(Keyboard input) {
         this.input = input;
-    
+        this.sprite = Sprite.player;
     }
     public void update(){
         int xa = 0;
@@ -26,8 +30,19 @@ public class Player {
         move(xa, ya);
     }
     public void move(int xa, int ya){
-        x += xa;
-        y += ya;
-    }
+        if (xa > 0 ) dir = 1;
+        if (xa < 0 ) dir = 3;
+        if (ya > 0 ) dir = 2;
+        if (ya < 0 ) dir = 0;
+        if (dir == 0) sprite = Sprite.playerBack;
+        if (dir == 3) sprite = Sprite.playerLeft;
+        if (dir == 1) sprite = Sprite.playerRight;
+        if (dir == 2) sprite = Sprite.player;
 
+        x += xa*2;
+        y += ya*2;
+    }
+    public void render(Screen screen){
+        screen.renderPlayer(x-16, y-16, sprite);
+    }
 }
