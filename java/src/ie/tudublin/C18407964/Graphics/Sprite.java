@@ -16,6 +16,7 @@ public class Sprite {
     public static Sprite zombieBack = new Sprite(32, 1, 0, SpriteSheet.zombie);
     public static Sprite zombieRight = new Sprite(32, 2, 0, SpriteSheet.zombie);
     public static Sprite zombieLeft = new Sprite(32, 3, 0, SpriteSheet.zombie);
+    public static Sprite wall = new Sprite(32, 1, 1, SpriteSheet.tiles);
     public Sprite(int size, int x, int y, SpriteSheet sheet){
         SIZE = size;
         pixels = new int[SIZE * SIZE];
