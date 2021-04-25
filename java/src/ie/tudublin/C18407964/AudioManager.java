@@ -40,18 +40,21 @@ public class AudioManager extends PApplet {
     }
     public void setVolume(int distance){
         FloatControl volume = (FloatControl) chaseMusic.getControl(FloatControl.Type.MASTER_GAIN);
-        volume.setValue((float)-distance);
-        if(distance > 60){
+      //  volume.setValue((float)-distance);
+        if(distance > 200){
             volume.setValue(-60f);  
         }
-       else if(distance > 40){
+       else if(distance > 150){
             volume.setValue(-40f);  
         }
-        else if(distance > 20){
+        else if(distance > 100){
             volume.setValue(-20f);  
         }
-        else if(distance < 20){
+        else if(distance < 100){
             volume.setValue(-10f);  
+        }
+        else {
+            volume.setValue(-80f);
         }
     }
 }

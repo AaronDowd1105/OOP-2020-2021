@@ -50,7 +50,7 @@ public class Project extends Canvas implements Runnable {
         level = new SpawnLevel("/level.png");
         player = new Player(key);
         zombie = new Zombie(200, 200, player);
-        audioManager = new AudioManager(".//OOP-2020-2021//java//RES//Jaws.wav");
+        audioManager = new AudioManager("Jaws.wav");
         audioManager.playchaseMusic();
     }
 
@@ -108,9 +108,9 @@ public class Project extends Canvas implements Runnable {
         key.update();
         player.update();
         zombie.update();
-        if(zombie.getDistanceFromPlayer() < 80){
+       // if(zombie.getDistanceFromPlayer() < 200){
             audioManager.setVolume(zombie.getDistanceFromPlayer());
-        }
+       // }
         if(key.up){
        }
        if(key.down){

@@ -39,8 +39,21 @@ public class Player {
         if (dir == 1) sprite = Sprite.playerRight;
         if (dir == 2) sprite = Sprite.player;
 
-        x += xa*2;
-        y += ya*2;
+        int newX = x + xa*2;
+        if (newX < 0 || newX > 1000){
+         
+        }
+        else{
+            x = newX;
+        }
+
+        int newY = y + ya*2;
+        if (newY < 0 || newY > 1000){
+         
+        }
+        else{
+            y = newY;
+        }
     }
     public void render(Screen screen){
         screen.renderPlayer(x-16, y-16, sprite);
