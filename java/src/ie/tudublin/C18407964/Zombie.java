@@ -19,7 +19,6 @@ public class Zombie {
     public void update(){
         move();
         getDistanceFromPlayer();
-        System.out.println(getDistanceFromPlayer());
     }
     public void move(){
        int xa = 0;

@@ -48,7 +48,7 @@ public class Project extends Canvas implements Runnable {
         screen = new Screen(width, height);
         addKeyListener(key);
         level = new SpawnLevel("/level.png");
-        player = new Player(key);
+        player = new Player(key, level);
         zombie = new Zombie(200, 200, player);
         audioManager = new AudioManager("Jaws.wav");
         audioManager.playchaseMusic();
