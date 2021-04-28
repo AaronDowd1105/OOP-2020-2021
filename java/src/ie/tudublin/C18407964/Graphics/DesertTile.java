@@ -11,7 +11,9 @@ public class DesertTile extends Tile {
 	public void render(int x, int y, Screen screen) {
 		screen.renderTile(x << 5, y << 5, this);
 	}
-	public boolean isSolid(){
+    
+    public boolean isSolid(){
         return true;
     }
+	
 }

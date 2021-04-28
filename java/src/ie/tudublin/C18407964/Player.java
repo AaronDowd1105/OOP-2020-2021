@@ -1,6 +1,7 @@
 package ie.tudublin.C18407964;
 
 import ddf.minim.ugens.Abs;
+import ie.tudublin.C18407964.Graphics.DesertTile;
 import ie.tudublin.C18407964.Graphics.Sprite;
 
 public class Player {
@@ -55,7 +56,12 @@ public class Player {
 		}
 		}
 
-
+        if(x < 0){
+            x = 0;
+        }
+        if(y < 0){
+            y = 0;
+        }
        
     }
     public void render(Screen screen){
@@ -73,7 +79,6 @@ public class Player {
 			int yt = ((y + ya) + c / 2 * 12 + 2)/32;
 			if (level.getTile(xt, yt).isSolid()) solid = true;
 		}
-        System.out.println("solid" + solid);
         return solid;
     }
 
