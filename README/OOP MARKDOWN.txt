@@ -1,0 +1,14 @@
+# What my assignment does
+
+My assignment starts with the player in a "dungeon" like area. In this area, I created a maze and the player must escape from the zombie/ghost I made. The music will get louder as the zombie/ghost gets close to you and then alternatively it will get lower as you get further away from the zombie/ghost.
+
+## The controls
+The controls of my game are simple. You can use WASD to move the player or alternatively you can use the arrow keys to move right, left, up, down.
+
+
+### How to make it run
+
+To make the program run I had to create many different classes ranging from the player class to the zombie class and everything in between. To physically start the program the user must enter F5 once this is done a new window will open and the user is free to play the game.
+
+#### Acheivements
+There is a lot of which I am proud of in this game. Firstly, I think it is interesting the way I created a map for the player to play in. I think it cool the way I created the maze using the paint app and every black block I drew there represented a wall of the maze. Similarly, the fact that I created both a player and a zombie and they each have avatars of what they are (Zombie looks like zombie. Player looks like a human).
